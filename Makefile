@@ -9,7 +9,7 @@ build:
 	@echo "Build ID: $$(cat .last_build)"
 
 test:
-	@docker run -ti --rm $$(cat .last_build) /bin/bash -c 'node -v'
+	@docker run -ti $$(cat .last_build) /bin/bash -c 'node -v'
 
 tag:
 	@docker tag $$(cat .last_build) $(account)/$(project):$$(cat .last_build)
